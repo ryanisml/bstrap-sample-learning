@@ -24,7 +24,7 @@ atau pada halaman ini, lihat `<> Code` pada pojok kanan atas lalu klik. Akan mun
 Setelah mengunduh repository, ekstrak semua file ke dalam `C:\xampp\htdocs` dan ubah nama folder menjadi `sample`
 
 ### Tahap 4
-Buat database, import data dari `database/test.sql`. kesebuah database.
+Buat database, import data dari `database/test.sql` kesebuah database. Contoh dapat membuat sebuah database dengan nama `test`.
 
 ### Tahap 5
 Buka browser yang biasa anda gunakan, buka aplikasi dengan cara membuka halaman
