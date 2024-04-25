@@ -76,9 +76,10 @@ include 'database.php';
                                         id="Password"
                                         placeholder="Password">
                                 </div>
-                                <div class="mb-3">
+                                <div class="float-end">
                                     <button type="submit" class="btn btn-primary">Login</button>
                                 </div>
+                                <div class="clearfix"></div>
                                 <hr>
                                 <p class="text-center mb-0">If you have not account
                                     <a href="register.php">Register Now</a>
