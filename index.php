@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+    header('Location: login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,7 +34,7 @@
             </button>
             <div class="navbar-nav">
                 <div class="nav-item text-nowrap">
-                    <a class="nav-link px-3" href="login.php">Sign out</a>
+                    <a class="nav-link px-3" href="logout.php">Sign out</a>
                 </div>
             </div>
         </header>

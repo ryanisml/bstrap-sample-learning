@@ -13,7 +13,6 @@ include 'database.php';
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            // output data of each row
             if($row = $result->fetch_assoc()) {
                 if($row['is_active'] == 1){
                     $_SESSION['username'] = $row['username'];
@@ -26,9 +25,6 @@ include 'database.php';
                   </div>';
                 }
             }
-            // while($row = $result->fetch_assoc()) {
-            //     echo "id: " . $row["id"]. " - Name: " . $row["name"]. "<br>";
-            // }
         } else {
             echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
             <strong>Maaf!</strong> Username atau Password Anda Salah.
@@ -85,7 +81,7 @@ include 'database.php';
                                 </div>
                                 <hr>
                                 <p class="text-center mb-0">If you have not account
-                                    <a href="#">Register Now</a>
+                                    <a href="register.php">Register Now</a>
                                 </p>
                             </form>
                         </div>
