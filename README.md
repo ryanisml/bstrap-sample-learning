@@ -24,13 +24,15 @@ atau pada halaman ini, lihat `<> Code` pada pojok kanan atas lalu klik. Akan mun
 Setelah mengunduh repository, ekstrak semua file ke dalam `C:\xampp\htdocs` dan ubah nama folder menjadi `sample`
 
 ### Tahap 4
+Buat database, import data dari `database/test.sql`. kesebuah database.
+
+### Tahap 5
 Buka browser yang biasa anda gunakan, buka aplikasi dengan cara membuka halaman
 ```bash
 http://localhost/sample
 ```
 
-### Tahap 5
-Buat database, import data dari `database/test.sql`. Setelah itu test buka aplikasi dengan menggunakan
+### Tahap 6
 Masuk kedalam website menggunakan akun :
 ```bash
 username : admin
