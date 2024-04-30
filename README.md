@@ -41,3 +41,8 @@ password : admin
 
 ## Penutup
 Jika terdapat kendala dalam menggunakan contoh sample bootstrap ini, silahkan dapat menghubungi melalui git atau melalui kontak saya.
+
+## Tutorial
+```bash
+INSERT INTO tb_user (username, password, is_active) VALUES ('admin2', md5(‘admin2'), 1)
+```
