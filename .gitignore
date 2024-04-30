@@ -1,0 +1,6 @@
+products-add.php
+products-delete.php
+products-list.php
+query/query_product_add.php
+query/query_product_delete.php
+query/query_register.php

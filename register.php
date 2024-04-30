@@ -1,3 +1,10 @@
+<!-- Script php post / get -->
+<?php
+    session_start();
+    if(isset($_SESSION['username'])){
+        header('Location: index.php');
+    }
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -22,7 +29,7 @@
                             <h3 class="text-center">Register Page</h3>
                         </div>
                         <div class="card-body">
-                            <form action="#" method="post">
+                            <form action="query/query_register.php" method="post">
                                 <div class="mb-3">
                                     <label for="username">Username</label>
                                     <input

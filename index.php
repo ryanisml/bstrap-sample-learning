@@ -44,17 +44,11 @@ if(!isset($_SESSION['username'])){
             <div class="row">
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                     <div class="position-sticky pt-3">
-                        <ul class="nav flex-column">
+                        <ul class="nav flex-column" id="nav_accordion">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="index.php?page=home">
                                     <span data-feather="home"></span>
                                     Dashboard
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php?page=about">
-                                    <span data-feather="file"></span>
-                                    About
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -68,6 +62,13 @@ if(!isset($_SESSION['username'])){
                                     <span data-feather="users"></span>
                                     Users
                                 </a>
+                            </li>
+                            <li class="nav-item has-submenu">
+                                <a class="nav-link" href="#"><span data-feather="archive"></span> Products <span class="float-end" data-feather="chevrons-down"></span></a>
+                                <ul class="submenu collapse">
+                                    <li><a class="nav-link" href="index.php?page=add-product"><span data-feather="plus"></span> Add New </a></li>
+                                    <li><a class="nav-link" href="index.php?page=product"><span data-feather="file"></span> List Products </a></li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -84,15 +85,21 @@ if(!isset($_SESSION['username'])){
                     case 'home':
                     include "home.php";
                     break;
-                    case 'about':
-                    include "about.php";
-                    break;
                     case 'contact':
                     include "contact.php";
                     break;
                     case 'user':
                     include "user.php";
                     break; 
+                    case 'product';
+                    include "products-list.php";
+                    break;
+                    case 'add-product';
+                    include "products-add.php";
+                    break;
+                    case 'edit-product';
+                    include "products-add.php";
+                    break;
                 }
             }
             else{
@@ -107,6 +114,36 @@ if(!isset($_SESSION['username'])){
     <script src="assets/feather/feather.min.js"></script>
     <script src="assets/chartjs/chart.min.js"></script>
     <script src="assets/js/index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            document.querySelectorAll('.sidebar .nav-link').forEach(function(element){
+                
+                element.addEventListener('click', function (e) {
+
+                let nextEl = element.nextElementSibling;
+                let parentEl  = element.parentElement;	
+
+                    if(nextEl) {
+                        e.preventDefault();
+                        let mycollapse = new bootstrap.Collapse(nextEl);
+                        // Change class feather-icon
+                        if(nextEl.classList.contains('show')){
+                            mycollapse.hide();
+                            // how to get element icon
+                        } else {
+                            mycollapse.show();
+                            // find other submenus with class=show
+                            var opened_submenu = parentEl.parentElement.querySelector('.submenu.show');
+                            // if it exists, then close all of them
+                            if(opened_submenu){
+                                new bootstrap.Collapse(opened_submenu);
+                            }
+                        }
+                    }
+                }); // addEventListener
+            }) // forEach
+        }); 
+    </script>
         <!-- Penutup bagian script -->
     </body>
 </html>
