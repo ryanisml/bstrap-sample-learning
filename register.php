@@ -29,15 +29,39 @@
                             <h3 class="text-center">Register Page</h3>
                         </div>
                         <div class="card-body">
-                            <form action="query/query_register.php" method="post">
+                            <?php
+                                if(isset($_SESSION['message'])){
+                                    echo "<div class='alert alert-".$_SESSION['message']['type']." alert-dismissible fade show' role='alert'>".$_SESSION['message']['message']." <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                                    unset($_SESSION['message']);
+                                }
+                            ?>
+                            <form action="query/query_register.php" method="post" autocomplete="off">
+                                <div class="mb-3">
+                                    <label for="full_name">Full Name</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        name="full_name"
+                                        placeholder="Full Name"
+                                        value="<?= (isset($_POST['full_name'])) ? $_POST['full_name'] : ''; ?>">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone">Phone Number</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        name="phone"
+                                        placeholder="Phone Number"
+                                        value="<?= (isset($_POST['phone'])) ? $_POST['phone'] : ''; ?>">
+                                </div>
                                 <div class="mb-3">
                                     <label for="username">Username</label>
                                     <input
-                                        type="username"
+                                        type="text"
                                         class="form-control"
                                         name="username"
-                                        id="username"
-                                        placeholder="Username">
+                                        placeholder="Username"
+                                        value="<?= (isset($_POST['username'])) ? $_POST['username'] : ''; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="Password">Password</label>
@@ -45,7 +69,6 @@
                                         type="password"
                                         class="form-control"
                                         name="password"
-                                        id="Password"
                                         placeholder="Password">
                                 </div>
                                 <div class="mb-3">
@@ -54,7 +77,6 @@
                                         type="password"
                                         class="form-control"
                                         name="confirm_password"
-                                        id="confirm_Password"
                                         placeholder="Confirm Password">
                                 </div>
                                 <div class="mb-3 text-center">
