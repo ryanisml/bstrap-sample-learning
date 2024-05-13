@@ -3,7 +3,6 @@ products-delete.php
 products-list.php
 query/query_product_add.php
 query/query_product_delete.php
-query/query_register.php
 query/query_product_edit.php
 query/query_product_list.php
 query/query_user_list.php
