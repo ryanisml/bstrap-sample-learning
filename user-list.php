@@ -21,8 +21,7 @@ include 'query/query_user_list.php';
                 <tbody>
                     <?php
                     if (mysqli_num_rows($users) > 0) {
-                        $no = 1;
-                        while ($user = mysqli_fetch_array($users)) {
+                        $no = 1; while ($user = mysqli_fetch_array($users)) {
                     ?>
                         <tr>
                             <th scope="row"><?= $no ?></th>
