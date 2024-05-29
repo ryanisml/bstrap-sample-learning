@@ -41,19 +41,3 @@ password : admin
 
 ## Penutup
 Jika terdapat kendala dalam menggunakan contoh sample bootstrap ini, silahkan dapat menghubungi melalui git atau melalui kontak saya.
-
-## Tutorial
-```bash
-INSERT INTO tb_user (username, password, is_active) VALUES ('admin2', md5(‘admin2'), 1)
-```
-
-```bash
-$imageFileType = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-if($imageFileType != 'jpeg' && $imageFileType != 'png' && $imageFileType != 'jpg'){
-    $_SESSION['message'] = array(
-        'type' => 'danger',
-        'message' => 'Sorry, only JPG, JPEG, PNG files are allowed'
-    );
-    header("location: ../index.php?page=edit-product&id=".$id);
-}
-```
