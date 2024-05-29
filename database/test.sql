@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2024 at 03:45 AM
+-- Generation Time: May 29, 2024 at 03:24 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `test`
 --
+CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `test`;
 
 -- --------------------------------------------------------
 
@@ -32,17 +34,18 @@ CREATE TABLE `tb_product` (
   `name` varchar(100) NOT NULL,
   `category` varchar(25) NOT NULL,
   `price` double NOT NULL,
-  `stock` int(11) NOT NULL
+  `stock` int(11) NOT NULL,
+  `image_path` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_product`
 --
 
-INSERT INTO `tb_product` (`id`, `name`, `category`, `price`, `stock`) VALUES
-(2, 'Kopi Hitam', 'Minuman', 15000, 2),
-(4, 'Kopi Susu', 'Minuman', 15000, 1),
-(5, 'Kopi Tubruk', 'Minuman', 13000, 2);
+INSERT INTO `tb_product` (`id`, `name`, `category`, `price`, `stock`, `image_path`) VALUES
+(2, 'Kopi Hitam', 'Minuman', 15000, 2, 'uploads/images/products/1716170019.jpg'),
+(4, 'Kopi Susu', 'Minuman', 15000, 1, 'uploads/images/products/1716169958.jpg'),
+(5, 'Kopi Tubruk', 'Minuman', 13000, 2, 'uploads/images/products/1716170061.jpg');
 
 -- --------------------------------------------------------
 
@@ -90,7 +93,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_product`
 --
 ALTER TABLE `tb_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
