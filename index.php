@@ -85,37 +85,11 @@ if(!isset($_SESSION['username'])){
         <!-- Bagian content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <?php 
+            include 'navigation.php';
             if(isset($_GET['page'])){
-                $page = $_GET['page'];
-                switch ($page) {
-                    case 'home':
-                    include "home.php";
-                    break;
-                    case 'contact':
-                    include "contact.php";
-                    break;
-                    case 'user':
-                    include "user-list.php";
-                    break; 
-                    case 'product';
-                    include "products-list.php";
-                    break;
-                    case 'add-product';
-                    include "products-add.php";
-                    break;
-                    case 'edit-product';
-                    include "products-add.php";
-                    break;
-                    case 'transaction';
-                    include "transaction.php";
-                    break;
-                    default:
-                    include "home.php";
-                    break;
-                }
-            }
-            else{
-                include "home.php";
+                includePage($_GET['page']);
+            }else{
+                includePage('home');
             }
         ?>
         </main>
