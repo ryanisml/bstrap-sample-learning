@@ -41,3 +41,4 @@ password : admin
 
 ## Penutup
 Jika terdapat kendala dalam menggunakan contoh sample bootstrap ini, silahkan dapat menghubungi melalui git atau melalui kontak saya.
+test
